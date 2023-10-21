@@ -2,26 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .text-brand-gradient {
+    @apply to-brand-blue bg-gradient-to-tr from-purple-400 bg-clip-text
+    text-transparent;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .bg-brand-gradient {
+    @apply to-brand-blue bg-gradient-to-tr from-purple-400;
+  }
+
+  .bg-brand-gradient-dim {
+    @apply to-brand-blue/80 bg-gradient-to-tr from-purple-400/80;
+  }
+
+  .bg-brand-gradient-dimmer {
+    @apply to-brand-blue/20 bg-gradient-to-tr from-purple-400/20;
+  }
+
+  .brand-ease {
+    @apply duration-500 ease-in-out;
+  }
+
+  .brand-card {
+    @apply border-brand-light/5 bg-brand-dark-50 rounded-2xl border-[1px] 
+    backdrop-blur-xl;
+  }
+
+  .brand-px {
+    @apply px-8 md:px-24 lg:px-44 2xl:px-60;
+  }
 }

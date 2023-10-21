@@ -1,0 +1,19 @@
+{
+  "techstack": [
+    "html",
+    "css",
+    "sass",
+    "javascript",
+    "typescript",
+    "react",
+    "next-js",
+    "redux",
+    "vite",
+    "framer-motion",
+    "mongodb",
+    "prisma",
+    "stripe",
+    "zustand",
+    "mongoose"
+  ]
+}

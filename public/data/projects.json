@@ -1,0 +1,123 @@
+{
+  "projects": [
+    {
+      "name": "furniture",
+      "type": "e-commerce website",
+      "coverimage": "/projects/furniture/furniture_1.png",
+      "desc": "A responsive multi-page website with interactive animations and user-friendly navigation showcasing various destinations, crew, and technologies involved in space exploration.",
+      "roles": ["UI/UX", "frontend"],
+      "features": [
+        {
+          "title": "checkout functionality",
+          "content": "Securely finalize purchases with Stripe and a confirmation page with product details after purcahse is complete."
+        },
+        {
+          "title": "fetch product from stripe",
+          "content": "Fetches product information from the Stripe API. So, product details, images and prices are always up-to-date."
+        },
+        {
+          "title": "local storage with zustand",
+          "content": "Cart data is stored in local storage, ensuring content remains intact across sessions."
+        },
+        {
+          "title": "filter component",
+          "content": "Refines product search by filtering for one or more of the following parameters: type, origin and material."
+        },
+        {
+          "title": "cart component",
+          "content": "Add and remove products from their cart, review selections, and proceed to checkout when ready to purchase."
+        },
+        {
+          "title": "related products",
+          "content": "Related products are fetched from Stripe API based on the category or characteristics of the viewed product."
+        }
+      ],
+      "challenges": [
+        {
+          "challenge": "Handling Data fetching errors and their sources",
+          "solution": "I placed all  stripe data fetching function in a single file and wrapped them all in their indivdual trycatch statement. If an error occured, I  throw it at the SWR function that called it and handle it on the client side. Plus, a simple console.log message detailing where the error occured."
+        },
+        {
+          "challenge": "Discovering a more secure and scalable way to retrieve product data",
+          "solution": "Initially, I stored product data in a vulnerable, unscalable JSON file within the public repository. But to enhance security and scalability, I created a next.js server to retrieve the product data directly from Stripe. And SWR to fetch the products on the client side."
+        }
+      ],
+      "techstack": [
+        "react",
+        "stripe",
+        "next-js",
+        "zustand",
+        "typescript",
+        "framer-motion"
+      ],
+      "screenshots": [
+        "/projects/furniture/furniture_1.png",
+        "/projects/furniture/furniture_2.png",
+        "/projects/furniture/furniture_3.png",
+        "/projects/furniture/furniture_4.png"
+      ],
+      "links": [
+        {
+          "name": "github",
+          "path": "https://github.com/AfopeM/Furniture"
+        },
+        {
+          "name": "live",
+          "path": "https://furniturex.netlify.app/"
+        }
+      ]
+    },
+    {
+      "name": "space tourism",
+      "type": "multi-page website",
+      "coverimage": "/projects/spacetourism/spacetourism_1.png",
+      "desc": "A responsive multi-page website with interactive animations and user-friendly navigation showcasing various destinations, crew, and technologies involved in space exploration.",
+      "roles": ["frontend"],
+      "features": [
+        {
+          "title": "slider and tab components",
+          "content": "Intuitive sliders and tabs, allowing for smoothly toggle between different topics and images."
+        },
+        {
+          "title": "smooth navigation",
+          "content": "Fluid & efficient page transitions between destination, crew and technology page."
+        },
+        {
+          "title": "interactive animations",
+          "content": "Subtle user-driven animations that lead to a more dynamic and engaging user-experience."
+        },
+        {
+          "title": "responsive design",
+          "content": "Adapts flawlessly to various devices and screen sizes, ensuring a user-friendly experience."
+        }
+      ],
+      "challenges": [
+        {
+          "challenge": "Ensuring slider and tab components are responsive, even with screen animation during transitions",
+          "solution": "Resizing various text and images as well as reducing/increasing padding and margin accordingly."
+        },
+        {
+          "challenge": "Maintaining page layout during routing while altering elements dynamically",
+          "solution": "Created a component that changes elements depending on the parameter passed on page routing."
+        }
+      ],
+      "techstack": ["react", "typescript", "next-js", "framer-motion"],
+      "screenshots": [
+        "/projects/spacetourism/spacetourism_1.png",
+        "/projects/spacetourism/spacetourism_2.png",
+        "/projects/spacetourism/spacetourism_3.png",
+        "/projects/spacetourism/spacetourism_4.png"
+      ],
+      "links": [
+        {
+          "name": "github",
+          "path": "https://github.com/AfopeM/Space_Toursim"
+        },
+        {
+          "name": "live",
+          "path": "https://spacextourism.netlify.app/"
+        }
+      ]
+    }
+  ]
+}
