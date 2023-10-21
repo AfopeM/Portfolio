@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning className="bg-brand-background">
         <div
-          className={`${oswald.variable} ${shrik.variable} text-brandbase font-oswald 
+          className={`${oswald.variable} ${shrik.variable} font-oswald 
           text-brand-light-60 overflow-hidden`}
         >
           <Nav />
