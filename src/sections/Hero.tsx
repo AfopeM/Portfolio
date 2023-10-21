@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-// import { Typing } from "@/components";
+import { Typing } from "@/components";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motion";
 import { handleScrollTo } from "@/utils";
@@ -33,7 +32,7 @@ export default function Hero() {
           lg:text-7xl"
         >
           Visual storytelling through code and
-          {/* <Typing title="design" /> */}
+          <Typing title="design" />
         </h2>
 
         {/* BUTTON */}
