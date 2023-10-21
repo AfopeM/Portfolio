@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Nav } from "@/components";
 import type { Metadata } from "next";
 import { Oswald, Shrikhand } from "next/font/google";
 
@@ -31,9 +32,10 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning className="bg-brand-background">
         <div
-          className={`${oswald.variable} ${shrik.variable} text-brand-base font-oswald 
+          className={`${oswald.variable} ${shrik.variable} text-brandbase font-oswald 
           text-brand-light-60 overflow-hidden`}
         >
+          <Nav />
           {children}
         </div>
       </body>
