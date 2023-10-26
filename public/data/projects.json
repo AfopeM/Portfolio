@@ -4,7 +4,7 @@
       "name": "furniture",
       "type": "e-commerce website",
       "coverimage": "/projects/furniture/furniture_1.png",
-      "desc": "A responsive multi-page website with interactive animations and user-friendly navigation showcasing various destinations, crew, and technologies involved in space exploration.",
+      "desc": "An e-commerce swebsite with seamlessly interactive animations. Where users can explore, select, and purchase products with advanced features including: a filter component, cart management, and secure Stripe integration.",
       "roles": ["UI/UX", "frontend"],
       "features": [
         {
