@@ -22,7 +22,7 @@ export default function Imagery() {
                 : item === "tertiary"
                 ? "hidden md:block md:opacity-0 lg:w-36 lg:-translate-x-3/4 lg:translate-y-[150%] lg:-rotate-45 lg:opacity-30"
                 : "left-0 hidden w-1/4 max-w-[200px] translate-x-2/4 rotate-2 md:block md:opacity-0 lg:translate-y-[90%] lg:rotate-[30deg] lg:opacity-30"
-            } brand-ease fixed bottom-1/2 right-1/2 h-auto w-[400px] translate-x-1/2 translate-y-1/2 blur-xl `}
+            } brand-ease fixed bottom-1/2 right-1/2 h-auto w-[400px] translate-x-1/2 translate-y-1/2 blur-xl`}
           />
         );
       })}

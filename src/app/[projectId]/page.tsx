@@ -5,14 +5,7 @@ import Image from "next/image";
 import { Contact } from "@/sections";
 import { motion } from "framer-motion";
 import type { ProjectProp } from "@/utils/model";
-import {
-  Techstack,
-  //   ProjectSectionTitle,
-  Imagery,
-  Card,
-  CardTitle,
-  CardContent,
-} from "@/components";
+import { Card, Imagery, CardTitle, Techstack, CardContent } from "@/components";
 
 async function fetcher() {
   const res = await fetch(`/data/projects.json`);
