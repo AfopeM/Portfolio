@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Contact } from "@/sections";
 import { motion } from "framer-motion";
+import { fadeIn } from "@/utils/motion";
 import type { ProjectProp } from "@/utils/model";
 import { Card, Imagery, CardTitle, Techstack, CardContent } from "@/components";
 
@@ -45,14 +46,14 @@ export default function Projects({
           items-center justify-center gap-y-4 xl:items-start"
         >
           {/* TITLE  */}
-          <div className="z-10 -mt-8 text-center uppercase xl:text-start">
+          <div className="z-10 -mt-20 text-center uppercase xl:text-start">
             <span
               className="text-brand-gradient text-lg font-bold tracking-widest 
               md:text-xl"
             >
               {project.type}
             </span>
-            <h1 className="text-brand-light text-5xl font-bold md:text-8xl">
+            <h1 className="text-5xl font-bold text-brand-light md:text-8xl">
               {project.name}
             </h1>
           </div>
@@ -67,7 +68,7 @@ export default function Projects({
 
           {/* ROLES */}
           <p
-            className="text-brand-gradient space-x-2 pb-8 text-xl font-bold 
+            className="text-brand-gradient space-x-2 pb-4 text-xl font-bold 
             uppercase md:pb-12"
           >
             {`Role${project.roles.length > 1 ? "s" : ""}: `}
@@ -75,7 +76,7 @@ export default function Projects({
               return (
                 <span
                   key={role}
-                  className="text-brand-light font-light capitalize tracking-wider opacity-60"
+                  className="font-light capitalize tracking-wider text-brand-light opacity-60"
                 >
                   {role}
                   {i < project.roles.length - 1 ? "," : ""}
@@ -109,7 +110,12 @@ export default function Projects({
             </Card>
 
             {/* CONTENT */}
-            <div>
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={fadeIn("right", 0.5)}
+            >
               <ul
                 className="grid w-full grid-cols-1 overflow-hidden 
                 rounded-xl lg:grid-cols-2 xl:grid-cols-3"
@@ -131,7 +137,7 @@ export default function Projects({
                       overflow-hidden px-8 text-center backdrop-blur-2xl lg:h-72 xl:gap-0 xl:hover:gap-4`}
                     >
                       <h3
-                        className="brand-ease text-brand-light h-full text-2xl font-bold uppercase 
+                        className="brand-ease h-full text-2xl font-bold uppercase text-brand-light 
                         xl:mt-20 xl:group-hover:mt-0"
                       >
                         {feature.title}
@@ -146,7 +152,7 @@ export default function Projects({
                   );
                 })}
               </ul>
-            </div>
+            </motion.div>
           </section>
 
           {/* CHALLENGES */}
@@ -169,7 +175,11 @@ export default function Projects({
             </Card>
 
             {/* CONTENT */}
-            <div
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={fadeIn("left", 0.5)}
               className="flex flex-wrap justify-center gap-8 text-center 
               xl:text-start"
             >
@@ -180,7 +190,7 @@ export default function Projects({
                     className="bg-brand-gradient-dimmer flex max-w-lg flex-col justify-center 
                     gap-4 rounded-xl px-8 py-10 tracking-wider backdrop-blur-2xl"
                   >
-                    <h3 className="text-brand-light text-2xl font-bold capitalize">
+                    <h3 className="text-2xl font-bold capitalize text-brand-light">
                       {challenge.challenge}
                     </h3>
                     <p className="text-xl font-light leading-normal">
@@ -189,7 +199,7 @@ export default function Projects({
                   </article>
                 );
               })}
-            </div>
+            </motion.div>
           </section>
 
           {/* SCREENSHOTS */}
@@ -211,7 +221,13 @@ export default function Projects({
             </Card>
 
             {/* CONTENT */}
-            <div className="flex w-full flex-wrap justify-center gap-8">
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={fadeIn("right", 0.5)}
+              className="flex w-full flex-wrap justify-center gap-8"
+            >
               {project.screenshots.map((img) => {
                 return (
                   <Image
@@ -225,7 +241,7 @@ export default function Projects({
                   />
                 );
               })}
-            </div>
+            </motion.div>
           </section>
         </main>
 
@@ -244,8 +260,8 @@ export default function Projects({
               delay: 0.5,
             },
           }}
-          className="bg-brand-gradient-dim text-brand-light fixed bottom-8 left-1/2 z-30 mx-auto flex
-          h-24 w-4/5 items-center justify-around rounded-xl backdrop-blur-xl 
+          className="bg-brand-gradient-dim fixed bottom-8 left-1/2 z-30 mx-auto flex h-24
+          w-4/5 items-center justify-around rounded-xl text-brand-light backdrop-blur-xl 
           md:w-1/2 lg:w-1/3"
         >
           {project.links.map((link) => {
@@ -279,15 +295,15 @@ export default function Projects({
       >
         {/* TITLE  */}
         <div className="flex w-full flex-col items-center gap-4 lg:items-start">
-          <div className="bg-brand-dark h-12 w-3/5 max-w-lg animate-pulse rounded-lg md:h-14" />
-          <div className="bg-brand-dark h-16 w-full max-w-3xl animate-pulse rounded-lg md:h-32" />
+          <div className="h-12 w-3/5 max-w-lg animate-pulse rounded-lg bg-brand-dark md:h-14" />
+          <div className="h-16 w-full max-w-3xl animate-pulse rounded-lg bg-brand-dark md:h-32" />
         </div>
 
         {/* DESCRIPTION */}
         <div className="flex w-full flex-col items-center gap-2 pb-8 md:items-start">
-          <div className="bg-brand-dark h-4 w-full max-w-2xl animate-pulse rounded" />
-          <div className="bg-brand-dark h-4 w-full max-w-2xl animate-pulse rounded" />
-          <div className="bg-brand-dark h-4 w-3/4 max-w-xl animate-pulse rounded" />
+          <div className="h-4 w-full max-w-2xl animate-pulse rounded bg-brand-dark" />
+          <div className="h-4 w-full max-w-2xl animate-pulse rounded bg-brand-dark" />
+          <div className="h-4 w-3/4 max-w-xl animate-pulse rounded bg-brand-dark" />
         </div>
 
         {/* TECHSTACK */}
@@ -296,7 +312,7 @@ export default function Projects({
             return (
               <div
                 key={item}
-                className="bg-brand-dark h-10 w-24 animate-pulse rounded md:h-20 md:w-20"
+                className="h-10 w-24 animate-pulse rounded bg-brand-dark md:h-20 md:w-20"
               />
             );
           })}
@@ -305,8 +321,8 @@ export default function Projects({
 
       {/* LINKS */}
       <aside
-        className="bg-brand-gradient text-brand-light fixed bottom-8 left-1/2 z-30 mx-auto
-        flex h-24 w-4/5 -translate-x-1/2 animate-pulse items-center justify-around rounded-xl 
+        className="bg-brand-gradient fixed bottom-8 left-1/2 z-30 mx-auto flex
+        h-24 w-4/5 -translate-x-1/2 animate-pulse items-center justify-around rounded-xl text-brand-light 
         md:w-1/2 lg:w-1/3"
       />
     </div>

@@ -4,7 +4,7 @@
       "name": "furniture",
       "type": "e-commerce website",
       "coverimage": "/projects/furniture/furniture_1.png",
-      "desc": "An e-commerce swebsite with seamlessly interactive animations. Where users can explore, select, and purchase products with advanced features including: a filter component, cart management, and secure Stripe integration.",
+      "desc": "An e-commerce website where users can explore, select, and purchase products with advanced features including: a filter component, cart management, and secure Stripe integration.",
       "roles": ["UI/UX", "frontend"],
       "features": [
         {

@@ -36,8 +36,8 @@ interface CardTitleProp {
 export function CardTitle({ emoji, title, style, alignment }: CardTitleProp) {
   return (
     <div
-      className={`bg-brand-gradient-dim text-brand-light flex items-center justify-center 
-        gap-2 rounded-t-2xl px-8 py-5 lg:px-10 ${alignment}`}
+      className={`bg-brand-gradient-dim flex items-center justify-center gap-2 
+        rounded-t-2xl px-8 py-5 text-brand-light lg:px-10 ${alignment}`}
     >
       <h3 className={`font-bold uppercase ${style}`}>{title}</h3>
       {emoji ? <span className="rotate-12 text-2xl">{emoji}</span> : null}
@@ -56,7 +56,7 @@ interface CardContentProp {
 export function CardContent({ children, style }: CardContentProp) {
   return (
     <div
-      className={`space-y-2 px-8 pb-8 text-xl font-light tracking-wider 
+      className={`space-y-2 px-6 pb-8 text-xl font-light tracking-wider 
         lg:px-10 ${style}`}
     >
       {children}

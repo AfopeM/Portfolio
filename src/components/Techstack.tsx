@@ -32,9 +32,9 @@ export default function Techstack({ techstack }: TechStackProp) {
         if (mobile)
           return (
             <li
-              key={crypto.randomUUID()}
-              className={`brand-card bg-brand-gradient-dimmer text-brand-light flex justify-center 
-                rounded-xl px-4 py-2 text-sm font-bold uppercase`}
+              key={tech + "m"}
+              className={`brand-card bg-brand-gradient-dimmer flex justify-center rounded-xl 
+                px-4 py-2 text-sm font-bold uppercase text-brand-light`}
             >
               {tech}
             </li>
@@ -42,7 +42,7 @@ export default function Techstack({ techstack }: TechStackProp) {
 
         return (
           <motion.li
-            key={crypto.randomUUID()}
+            key={tech}
             initial="initial"
             animate="initial"
             whileHover="hover"
@@ -60,8 +60,8 @@ export default function Techstack({ techstack }: TechStackProp) {
             />
             <motion.span
               variants={TechStackVariant}
-              className="bg-brand-gradient text-brand-light absolute left-1/2 top-0     
-                min-w-max rounded-lg px-4 py-2 text-sm font-bold uppercase
+              className="bg-brand-gradient absolute left-1/2 top-0 min-w-max     
+                rounded-lg px-4 py-2 text-sm font-bold uppercase text-brand-light
                 after:absolute after:-bottom-1 after:left-1/2 after:block after:h-2 
                 after:w-2 after:-translate-x-1/2 after:rotate-45 after:bg-purple-400  
                 md:text-base"
