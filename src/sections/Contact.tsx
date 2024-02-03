@@ -1,8 +1,7 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motion";
+import { SectionTitle } from "@/components";
 import { useReducer, useState, useEffect } from "react";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -110,36 +109,16 @@ export default function Contact() {
   return (
     <footer
       id="contact"
-      className="brand-ease bg-brand-dark/40 mt-24 flex min-h-screen flex-col
-        items-center justify-evenly gap-8 overflow-y-hidden p-12 py-32 
-        backdrop-blur-2xl lg:items-start lg:px-32 lg:py-24 lg:pt-56 xl:flex-row"
+      className="brand-px flex h-[950px] flex-col items-center justify-evenly 
+      overflow-y-hidden bg-brand-dark py-32"
     >
       {/* CALL TO ACTION */}
-      <div className="space-y-4 text-center sm:text-start">
-        <h4 className="text-brand-gradient text-3xl font-bold uppercase">
-          Interested in Working Together?
-        </h4>
-        <p
-          className="brand-ease text-brand-light-60 w-full max-w-3xl text-xl font-light 
-            tracking-wider md:text-2xl"
-        >
-          I look forward to contributing my skills to your projects. Don&apos;t
-          Hesitate to contact me on{" "}
-          <Link
-            target="_blank"
-            className="text-brand-light group relative font-bold"
-            as={"https://www.linkedin.com/in/oluwatobi-matilukuro-657023263/"}
-            href={"https://www.linkedin.com/in/oluwatobi-matilukuro-657023263/"}
-          >
-            LinkedIn
-            <span
-              className="bg-brand-gradient brand-ease absolute -bottom-[2px] 
-                left-0 block h-[2px] w-1/2 group-hover:w-full"
-            />
-          </Link>{" "}
-          to discuss how we can collaborate and create amazing things together.
-        </p>
-      </div>
+      <SectionTitle
+        title="Interested in Working Together?"
+        contentExtra="text-brand-light-dim"
+        content="I look forward to contributing my skills to your projects. 
+        Let's discuss how we can collaborate and create amazing things together."
+      />
 
       {/* FORM */}
       <motion.form
@@ -147,19 +126,8 @@ export default function Contact() {
         whileInView="show"
         viewport={{ once: true }}
         variants={fadeIn("up", 0.5)}
-        className="brand-card bg-brand-background w-full max-w-4xl overflow-hidden"
+        className="w-full max-w-4xl px-4 md:px-12"
       >
-        {/* FORM HEADER */}
-        <h4
-          className="text-brand-light p-8 text-xl font-bold uppercase 
-            md:px-12 md:py-6 md:text-3xl"
-        >
-          <span className="text-brand-gradient block text-xs md:text-base">
-            I look forward to hearing from you
-          </span>
-          Send me a Message !
-        </h4>
-
         {submitted ? (
           // SENT EMAIL
           <div
@@ -167,14 +135,14 @@ export default function Contact() {
               md:flex-row"
           >
             <h3
-              className="text-brand-light text-center text-4xl font-bold 
-                uppercase md:text-6xl"
+              className="text-center text-4xl font-bold uppercase 
+                text-brand-light md:text-6xl"
             >
               Message Sent
             </h3>
             <div
-              className="bg-brand-gradient text-brand-light flex h-16 w-16 
-                items-center justify-center rounded-full text-4xl"
+              className="bg-brand-gradient flex h-16 w-16 items-center 
+                justify-center rounded-full text-4xl text-brand-light"
             >
               <FontAwesomeIcon icon={faCheck} />
             </div>
@@ -182,7 +150,7 @@ export default function Contact() {
         ) : (
           <>
             {/* FORM CONTENT */}
-            <div className="grid grid-cols-1 gap-4 px-8 md:grid-cols-2 md:px-12">
+            <div className="grid grid-cols-1 gap-4  md:grid-cols-2">
               {["email", "subject", "message"].map((item) => {
                 return (
                   <div
@@ -191,14 +159,7 @@ export default function Contact() {
                       item === "message" ? "md:col-span-2" : ""
                     } relative`}
                   >
-                    <div
-                      className={`${
-                        state[item as keyof typeof INITIAL_STATE].inFocus
-                          ? "opacity-100"
-                          : "opacity-0"
-                      } bg-brand-gradient absolute left-1/2 top-1/2 h-[calc(100%+0.4rem)] 
-                        w-[calc(100%+0.4rem)] -translate-x-1/2 -translate-y-1/2 rounded-lg`}
-                    />
+                    <div className="bg-brand-gradient absolute bottom-0 left-0 h-[1px] w-full" />
                     {item !== "message" ? (
                       <input
                         required
@@ -228,8 +189,8 @@ export default function Contact() {
                             payload: { name: item, text: e.target.value },
                           })
                         }
-                        className="border-brand-light/5 bg-brand-dark focus:text-brand-light-60 relative h-12 w-full 
-                          rounded-lg border-2 px-6 text-xs uppercase outline-none md:text-sm"
+                        className="relative h-12 w-full bg-transparent uppercase tracking-wider 
+                        text-brand-light outline-none focus:normal-case "
                       />
                     ) : (
                       <textarea
@@ -256,8 +217,8 @@ export default function Contact() {
                           })
                         }
                         placeholder="type your message here"
-                        className="border-brand-light/5 bg-brand-dark focus:text-brand-light-60 relative h-36 w-full rounded-lg 
-                          border-2 p-6 text-xs uppercase tracking-wider outline-none md:h-56 md:text-sm"
+                        className="relative mt-8 h-24 w-full bg-transparent uppercase 
+                        tracking-wider text-brand-light outline-none focus:normal-case md:h-36"
                       />
                     )}
                   </div>
@@ -270,26 +231,18 @@ export default function Contact() {
               type="submit"
               disabled={disable}
               onClick={(e) => handleSubmit(e)}
-              className="bg-brand-gradient-dimmer group relative mt-8 w-full py-8 text-2xl font-bold uppercase"
+              className={`${
+                disable ? "" : "hover:bg-brand-gradient"
+              } brand-ease bg-brand-gradient-dim group  relative mt-8 w-full rounded-2xl py-8 text-2xl font-bold uppercase`}
             >
-              <div
-                className={`${
-                  disable ? "" : "group-hover:h-full"
-                } bg-brand-gradient brand-ease absolute bottom-0 h-0 w-full`}
-              />
               <p
                 className={`${
-                  disable ? "" : "group-hover:scale-125"
-                } brand-ease text-brand-light relative flex items-center justify-center gap-4 `}
+                  disable
+                    ? ""
+                    : "text-brand-light-dim group-hover:scale-110 group-hover:text-brand-light"
+                } brand-ease relative flex items-center justify-center gap-4  `}
               >
-                get in touch
-                <Image
-                  width={0}
-                  height={0}
-                  alt="live-icon"
-                  src="/icon/icon-live.svg"
-                  className="inline-block h-6 w-6"
-                />
+                send a message
               </p>
             </button>
           </>

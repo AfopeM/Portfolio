@@ -1,16 +1,16 @@
-import { Imagery } from "@/components";
+import { BgImagery } from "@/components";
 import { Hero, About, Projects, Contact } from "@/sections";
 
 export default function Home() {
   return (
-    <>
-      <main className="brand-px mb-32">
-        <Imagery />
+    <div className="relative">
+      <BgImagery />
+      <main className="relative z-10">
         <Hero />
         <About />
         <Projects />
+        <Contact />
       </main>
-      <Contact />
-    </>
+    </div>
   );
 }

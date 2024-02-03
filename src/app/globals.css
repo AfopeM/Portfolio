@@ -4,20 +4,20 @@
 
 @layer components {
   .text-brand-gradient {
-    @apply to-brand-blue bg-gradient-to-tr from-purple-400 bg-clip-text
+    @apply bg-gradient-to-tr from-purple-400 to-brand-blue bg-clip-text
     text-transparent;
   }
 
   .bg-brand-gradient {
-    @apply to-brand-blue bg-gradient-to-tr from-purple-400;
+    @apply bg-gradient-to-tr from-purple-400 to-brand-blue;
   }
 
   .bg-brand-gradient-dim {
-    @apply to-brand-blue/80 bg-gradient-to-tr from-purple-400/80;
+    @apply bg-gradient-to-tr from-purple-400/50 to-brand-blue/50;
   }
 
-  .bg-brand-gradient-dimmer {
-    @apply to-brand-blue/20 bg-gradient-to-tr from-purple-400/20;
+  .bg-brand-gradient-dim-x {
+    @apply bg-gradient-to-tr from-purple-400/20 to-brand-blue/20;
   }
 
   .brand-ease {
@@ -25,11 +25,10 @@
   }
 
   .brand-card {
-    @apply border-brand-light/5 bg-brand-dark-50 rounded-2xl border-[1px] 
-    backdrop-blur-xl;
+    @apply bg-brand-gradient-dim rounded-2xl backdrop-blur-xl;
   }
 
   .brand-px {
-    @apply px-8 md:px-24 lg:px-44 2xl:px-60;
+    @apply px-8 md:px-24 xl:px-60 2xl:px-96;
   }
 }

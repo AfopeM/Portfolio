@@ -1,52 +1,61 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { BrandBtn } from "@/components";
 
 interface ProjectCardSnippetProp {
+  desc: string;
   name: string;
-  coverimage: string;
   type: string;
+  coverimage: string;
+  links: { name: string; path: string }[];
 }
 
 export default function ProjectCards({
   name,
+  desc,
   type,
+  links,
   coverimage,
 }: ProjectCardSnippetProp) {
   return (
     <article
-      className="brand-ease group h-[500px] w-80 rounded-2xl border-[1px] border-brand-dark-50 
-        bg-brand-dark backdrop-blur-xl md:h-[600px] md:w-96 md:overflow-hidden"
+      className="mx-auto flex w-full max-w-[700px] flex-col items-center gap-8
+      text-center lg:text-start"
     >
       {/* IMAGERY*/}
       <Link
         type="button"
         as={`/${name.replace(" ", "-")}`}
         href={`/${name.replace(" ", "-")}`}
-        className="relative block h-[80%] w-full lg:h-full"
+        className="relative block h-96 w-full overflow-hidden rounded-2xl
+        bg-brand-dark"
       >
         <Image
           fill
-          width={0}
-          height={0}
-          sizes="70vw"
+          sizes="100vw"
           src={coverimage}
           alt={`${name} cover image`}
-          className="brand-ease object-cover object-top opacity-75 lg:opacity-100 
-          lg:hover:scale-105 lg:hover:opacity-75"
+          className="brand-ease object-cover lg:hover:scale-105"
         />
       </Link>
-      {/* TITLE */}
-      <div
-        className="brand-ease bg-brand-gradient // flex h-[20%] w-full flex-col 
-        items-center justify-center rounded-b-xl uppercase lg:pointer-events-none 
-        lg:absolute lg:bottom-0 lg:h-0 lg:translate-y-10 lg:group-hover:h-[15%] 
-        lg:group-hover:translate-y-0"
-      >
-        <p className="text-sm font-bold tracking-wider text-brand-dark-80 lg:text-base">
-          {type}
-        </p>
-        <h2 className="text-2xl font-bold text-brand-light">{name}</h2>
+      {/* DESC */}
+      <div>
+        <h2 className="space-x-4 font-bold uppercase">
+          <span className="text-brand-dark-dim text-3xl ">{name}</span>
+          <span className="text-brand-gradient text-xs tracking-wider lg:text-base">
+            {type}
+          </span>
+        </h2>
+        <p>{desc}</p>
+        <div className="mt-8 flex justify-around lg:justify-start lg:gap-12">
+          <BrandBtn type="link" content="Live Site" path={links[1].path} />
+          <BrandBtn
+            type="link"
+            content="View More"
+            path={`/${name.replace(" ", "-")}`}
+          />
+        </div>
       </div>
     </article>
   );

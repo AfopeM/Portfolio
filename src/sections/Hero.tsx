@@ -1,83 +1,42 @@
 "use client";
-import { Typing } from "@/components";
-import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/motion";
-import { handleScrollTo } from "@/utils";
-import { useMobileScreen } from "@/hooks/useMobileScreen";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { BrandBtn } from "@/components";
 
 export default function Hero() {
-  const mobile = useMobileScreen();
   return (
-    <motion.section
+    <section
       id="hero"
-      viewport={{ once: true }}
-      initial={{ scale: 0, opacity: 0 }}
-      whileInView={{
-        scale: 1,
-        opacity: 1,
-        transition: {
-          type: "spring",
-        },
-      }}
-      className="text-brand-light relative flex h-screen flex-col justify-center"
+      className="brand-px flex h-[950px] flex-col items-center justify-center 
+      text-center"
     >
       {/* INTRODUCTION */}
-      <div className="relative space-y-12 text-center uppercase lg:text-start">
-        {/* TITLE  */}
-        <h2
-          className="brand-ease mx-auto w-[350px] text-[2.5rem] font-bold leading-none 
-          sm:w-[400px] sm:text-[2.8rem] md:w-[505px] md:text-6xl lg:mx-0 lg:w-[800px] 
-          lg:text-7xl"
-        >
-          Visual storytelling through code and
-          <Typing title="design" />
-        </h2>
+      <p className="text-brand-dim">
+        I&apos;m{" "}
+        <span className="font-bold text-brand-dark">Afope Matilukuro</span>
+      </p>
+      {/* TITLE  */}
+      <h1
+        className="text-brand-gradient brand-ease text-5xl font-bold capitalize 
+        md:text-7xl"
+      >
+        front-end <br />
+        web developer
+      </h1>
+      <p className="brand-ease max-w-2xl pt-4 text-lg lg:pt-8 lg:text-3xl">
+        I build visually appealing responsive websites with interactive content
+        and animation. Creating a fusion of design and functionality.
+      </p>
 
-        {/* BUTTON */}
-        {mobile ? (
-          <motion.button
-            type="button"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={fadeIn("up", 0.8)}
-            onClick={() => handleScrollTo("projects")}
-            className="bg-brand-gradient mx-auto flex w-44 items-center justify-around 
-              rounded-xl px-4 py-3 uppercase tracking-wider"
-          >
-            View Projects
-            <FontAwesomeIcon
-              icon={faCircleArrowRight}
-              className="rotate-[90deg] text-lg"
-            />
-          </motion.button>
-        ) : (
-          <motion.button
-            type="button"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.1 }}
-            variants={fadeIn("up", 0.8)}
-            onClick={() => handleScrollTo("projects")}
-            className="bg-brand-dark group mx-auto flex w-44 items-center justify-around
-            overflow-hidden rounded-xl px-4 py-3 backdrop-blur-xl lg:mx-0"
-          >
-            <div
-              className="bg-brand-gradient brand-ease absolute bottom-0 h-full w-full
-              group-hover:h-full md:h-0"
-            />
-            <p className="relative uppercase tracking-wider">View Projects</p>
-            <FontAwesomeIcon
-              icon={faCircleArrowRight}
-              className="brand-ease relative rotate-[90deg] text-lg group-hover:rotate-[90deg]
-              md:rotate-0"
-            />
-          </motion.button>
-        )}
+      {/* BUTTON */}
+      <div className="flex w-full justify-around pt-12">
+        <BrandBtn content={"View Projects"} type={"button"} path={"projects"} />
+        <BrandBtn
+          type={"link"}
+          content={"View Resume"}
+          path={
+            "https://docs.google.com/document/d/1u3gggggy02V5iOuDCjjfkNmoa__QEiRPTf2VX9ibH2U/edit?usp=sharing"
+          }
+        />
       </div>
-    </motion.section>
+    </section>
   );
 }

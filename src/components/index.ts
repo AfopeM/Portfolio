@@ -1,17 +1,8 @@
-import Typing from "./Typing";
-import Imagery from "./Imagery";
-import Nav from "@/components/Nav";
+import Nav from "./Nav";
+import BrandBtn from "./BrandBtn";
 import Techstack from "./Techstack";
+import { BgImagery } from "./BgImagery";
 import ProjectCards from "./ProjectCard";
-import { Card, CardContent, CardTitle } from "./Card";
+import SectionTitle from "./SectionTitle";
 
-export {
-  Nav,
-  Typing,
-  Imagery,
-  Techstack,
-  ProjectCards,
-  Card,
-  CardTitle,
-  CardContent,
-};
+export { Nav, BrandBtn, BgImagery, Techstack, SectionTitle, ProjectCards };

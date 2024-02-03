@@ -1,26 +1,19 @@
 import "./globals.css";
 import { Nav } from "@/components";
 import type { Metadata } from "next";
-import { Oswald, Shrikhand } from "next/font/google";
+import { Fira_Sans } from "next/font/google";
 
-const oswald = Oswald({
+const fira = Fira_Sans({
   subsets: ["latin"],
-  weight: ["200", "400", "700"],
-  variable: "--oswald",
+  weight: ["200", "400", "800"],
+  variable: "--fira",
   preload: false,
   display: "swap",
 });
 
-const shrik = Shrikhand({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--shrik",
-  preload: false,
-  display: "swap",
-});
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Welcome my name is Tobi Matilukuro's and this is my Portfolio",
+  title: "Afope Matilukuro - Frontend Developer",
+  description: "Welcome my name is Afope Matilukuro's and this is my Portfolio",
 };
 
 export default function RootLayout({
@@ -30,10 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning className="bg-brand-background">
+      <body suppressHydrationWarning className="bg-brand-light">
         <div
-          className={`${oswald.variable} ${shrik.variable} font-oswald 
-          text-brand-light-60 overflow-hidden`}
+          className={`${fira.variable} text-brand-dark-dim font-fira font-light`}
         >
           <Nav />
           {children}

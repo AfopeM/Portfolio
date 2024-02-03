@@ -10,18 +10,15 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          "light-60": "rgba(229,229,229,60%)",
-          light: "rgb(229,229,229)",
+          "light-dim": "rgba(230,230,230,50%)",
+          light: "rgb(230, 230, 230)",
           dark: "rgb(34,40,52)",
-          "dark-50": "rgb(34,40,52,50%)",
-          "dark-80": "rgb(34,40,52,80%)",
+          "dark-dim": "rgb(34,40,52,75%)",
           blue: "rgb(68,171,229)",
-          background: "rgb(27,28,32)",
         },
       },
       fontFamily: {
-        shrik: ["var(--shrik)"],
-        oswald: ["var(--oswald)"],
+        fira: ["var(--fira)"],
       },
     },
   },

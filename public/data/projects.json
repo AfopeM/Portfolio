@@ -4,6 +4,7 @@
       "name": "furniture",
       "type": "e-commerce website",
       "coverimage": "/projects/furniture/furniture_1.png",
+      "displayimage": "/projects/furniture/furniture_2.png",
       "desc": "An e-commerce website where users can explore, select, and purchase products with advanced features including: a filter component, cart management, and secure Stripe integration.",
       "roles": ["UI/UX", "frontend"],
       "features": [
@@ -50,12 +51,6 @@
         "typescript",
         "framer-motion"
       ],
-      "screenshots": [
-        "/projects/furniture/furniture_1.png",
-        "/projects/furniture/furniture_2.png",
-        "/projects/furniture/furniture_3.png",
-        "/projects/furniture/furniture_4.png"
-      ],
       "links": [
         {
           "name": "github",
@@ -71,6 +66,7 @@
       "name": "space tourism",
       "type": "multi-page website",
       "coverimage": "/projects/spacetourism/spacetourism_1.png",
+      "displayimage": "/projects/spacetourism/spacetourism_2.png",
       "desc": "A responsive multi-page website with interactive animations and user-friendly navigation showcasing various destinations, crew, and technologies involved in space exploration.",
       "roles": ["frontend"],
       "features": [
@@ -102,12 +98,6 @@
         }
       ],
       "techstack": ["react", "typescript", "next-js", "framer-motion"],
-      "screenshots": [
-        "/projects/spacetourism/spacetourism_1.png",
-        "/projects/spacetourism/spacetourism_2.png",
-        "/projects/spacetourism/spacetourism_3.png",
-        "/projects/spacetourism/spacetourism_4.png"
-      ],
       "links": [
         {
           "name": "github",

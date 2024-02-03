@@ -5,20 +5,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { handleScrollTo } from "@/utils";
 import { usePathname } from "next/navigation";
-import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// PATHS
-const paths = ["about", "projects", "contact", "resume"];
-const projectPath = [
-  "hero",
-  "features",
-  "challenges",
-  "screenshots",
-  "contact",
-];
+//PATHS
+const paths = ["skills", "projects", "contact", "resume"];
+const projectPath = ["techstack", "features", "challenges", "contact"];
 
-//   NAV ANIMATION
+//NAV ANIMATION
 const navVariant = {
   hidden: {
     y: -50,
@@ -47,18 +39,17 @@ export default function Nav() {
         variants={navVariant}
         initial="hidden"
         whileInView="show"
-        className="brand-card fixed left-1/2 top-8 z-20 flex h-16 w-3/4 max-w-lg 
+        className="brand-card fixed left-1/2 top-8 z-20 flex h-16 w-1/2 max-w-3xl
       items-center justify-between px-8"
       >
         {/* LOGO */}
-        <Link href={"/"} as={"/"}>
-          <Image
-            width={0}
-            height={0}
-            alt="logo"
-            src="/icon/logo.svg"
-            className="brand-ease h-9 w-9 hover:scale-110"
-          />
+        <Link
+          href={"/"}
+          as={"/"}
+          className="text-2xl font-bold text-brand-light"
+        >
+          <span>A</span>
+          <span className="text-brand-gradient -ml-1">M</span>
         </Link>
 
         {/* BURGER MENU */}
@@ -82,7 +73,7 @@ export default function Nav() {
               sizes="1vw"
               alt="menu close"
               src="/icon/icon-close.svg"
-              className="brand-ease object-cover opacity-50 group-hover:opacity-100"
+              className="brand-ease object-cover"
             />
           ) : (
             <Image
@@ -90,7 +81,7 @@ export default function Nav() {
               sizes="1vw"
               alt="burger menu"
               src="/icon/icon-menu.svg"
-              className="brand-ease object-cover opacity-50 group-hover:opacity-100"
+              className="brand-ease object-cover"
             />
           )}
         </motion.button>
@@ -98,10 +89,10 @@ export default function Nav() {
         {/* MOBILE MENU */}
         <motion.ul
           initial={{ y: -600 }}
-          animate={{ y: openMenu ? 220 : -300, x: -30 }}
+          animate={{ y: openMenu ? 250 : -300, x: -30 }}
           transition={{ type: "spring", stiffness: 125, damping: 12 }}
-          className="bg-brand-dark absolute grid h-80 w-full grid-rows-5 items-center 
-        overflow-hidden rounded-2xl text-center uppercase tracking-widest"
+          className="bg-brand-dark-dim absolute flex h-96 w-full flex-col items-center 
+          overflow-hidden rounded-2xl text-center uppercase tracking-widest backdrop-blur-xl"
         >
           {projectPath.map((path) => {
             return (
@@ -112,11 +103,9 @@ export default function Nav() {
                     setOpenMenu(false);
                     handleScrollTo(path);
                   }}
-                  className={`${
-                    path === "contact"
-                      ? "brand-ease bg-brand-gradient text-brand-light/90 hover:text-brand-light group flex h-full w-full items-center justify-center gap-2 text-lg font-bold uppercase tracking-widest hover:gap-4"
-                      : "brand-ease hover:text-brand-light group flex h-full w-full items-center justify-center gap-4 uppercase tracking-widest hover:scale-110"
-                  }`}
+                  className="brand-ease text-brand-light-dim group flex h-full w-full 
+                  items-center justify-center gap-4 uppercase tracking-widest hover:scale-110 
+                  hover:text-brand-light"
                 >
                   {path}
                 </button>
@@ -128,27 +117,24 @@ export default function Nav() {
     );
   }
 
+  //HOME PAGE NAVIGATION
   return (
     <motion.nav
       variants={navVariant}
       initial="hidden"
       whileInView="show"
-      className="brand-card fixed left-1/2 top-8 z-20 flex h-16 w-3/4 max-w-lg 
-      items-center justify-between px-8"
+      className="brand-card text-brand-light-dim fixed left-1/2 top-8 z-20 
+      flex h-16 w-1/2 max-w-3xl items-center justify-between px-8"
     >
       {/* LOGO */}
       <button
         type="button"
         aria-label="logo"
         onClick={() => handleScrollTo("hero")}
+        className="text-2xl font-bold text-brand-light"
       >
-        <Image
-          width={0}
-          height={0}
-          alt="logo"
-          src="/icon/logo.svg"
-          className="brand-ease h-9 w-9 hover:scale-110"
-        />
+        <span>A</span>
+        <span className="text-brand-gradient -ml-1">M</span>
       </button>
 
       {/* BURGER MENU */}
@@ -174,7 +160,7 @@ export default function Nav() {
             sizes="1vw"
             alt="menu close"
             src="/icon/icon-close.svg"
-            className="brand-ease object-cover opacity-50 group-hover:opacity-100"
+            className="brand-ease object-cover"
           />
         ) : (
           <Image
@@ -182,7 +168,7 @@ export default function Nav() {
             sizes="1vw"
             alt="burger menu"
             src="/icon/icon-menu.svg"
-            className="brand-ease object-cover opacity-50 group-hover:opacity-100"
+            className="brand-ease object-cover"
           />
         )}
       </motion.button>
@@ -192,8 +178,8 @@ export default function Nav() {
         initial={{ y: -600 }}
         animate={{ y: openMenu ? 190 : -300, x: -30 }}
         transition={{ type: "spring", stiffness: 125, damping: 12 }}
-        className="bg-brand-dark absolute grid h-72 w-full grid-rows-4 items-center 
-        overflow-hidden rounded-2xl text-center uppercase tracking-widest"
+        className="bg-brand-dark-dim absolute flex h-72 w-full flex-col items-center 
+        rounded-2xl uppercase backdrop-blur-xl"
       >
         {paths.map((path) => {
           return (
@@ -205,25 +191,21 @@ export default function Nav() {
                     setOpenMenu(false);
                     handleScrollTo(path);
                   }}
-                  className="brand-ease hover:text-brand-light group flex h-full w-full
-                  items-center justify-center gap-4 uppercase tracking-widest hover:scale-110"
+                  className="brand-ease text-brand-light-dim flex h-full w-full items-center 
+                  justify-center uppercase hover:scale-110 hover:text-brand-light"
                 >
                   {path}
                 </button>
               ) : (
                 <Link
                   target="_blank"
-                  as="/resume.pdf"
-                  href="/resume.pdf"
                   onClick={() => setOpenMenu(false)}
-                  className="brand-ease bg-brand-gradient text-brand-light/90 hover:text-brand-light 
-                  group flex h-full w-full items-center justify-center gap-2 text-lg font-bold hover:gap-4"
+                  className="brand-ease group flex h-full w-full items-center justify-center 
+                  hover:scale-110 hover:text-brand-light"
+                  as="https://docs.google.com/document/d/1u3gggggy02V5iOuDCjjfkNmoa__QEiRPTf2VX9ibH2U/edit?usp=sharing"
+                  href="https://docs.google.com/document/d/1u3gggggy02V5iOuDCjjfkNmoa__QEiRPTf2VX9ibH2U/edit?usp=sharing"
                 >
-                  <p className="brand-ease group-hover:scale-125">{path}</p>
-                  <FontAwesomeIcon
-                    icon={faFilePdf}
-                    className="brand-ease w-4 group-hover:scale-125"
-                  />
+                  {path}
                 </Link>
               )}
             </li>

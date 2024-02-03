@@ -9,11 +9,13 @@
     "next-js",
     "redux",
     "vite",
+    "git",
     "framer-motion",
     "mongodb",
     "prisma",
     "stripe",
     "zustand",
+    "postgresql",
     "mongoose"
   ]
 }

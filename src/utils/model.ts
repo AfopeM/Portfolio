@@ -2,11 +2,11 @@ export interface ProjectProp {
   name: string;
   type: string;
   coverimage: string;
+  displayimage: string;
   desc: string;
   roles: string[];
   features: FeatureProp[];
   challenges: ChallengeProp[];
-  screenshots: string[];
   techstack: string[];
   links: LinkProp[];
 }
